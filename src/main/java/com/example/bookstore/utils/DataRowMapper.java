@@ -9,6 +9,12 @@ import java.sql.SQLException;
 public class DataRowMapper implements RowMapper<BookStoreEntity> {
     @Override
     public BookStoreEntity mapRow(ResultSet resultSet, int i) throws SQLException {
-        return null;
+        BookStoreEntity entity = new BookStoreEntity();
+        entity.setId(resultSet.getInt("id"));
+        entity.setName(resultSet.getString("name"));
+        entity.setAuthor(resultSet.getString("author"));
+        entity.setPrice(resultSet.getString("price"));
+        entity.setShortDesc(resultSet.getString("short_desc"));
+        return entity;
     }
 }

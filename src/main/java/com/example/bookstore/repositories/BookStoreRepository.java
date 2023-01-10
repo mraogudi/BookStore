@@ -2,6 +2,7 @@ package com.example.bookstore.repositories;
 
 import com.example.bookstore.model.BookStoreEntity;
 import com.example.bookstore.utils.DataRowMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Repository
 public class BookStoreRepository {
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public List<BookStoreEntity> getAllBooks() {
