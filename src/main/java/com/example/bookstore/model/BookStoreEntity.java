@@ -6,10 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.*;
+
 @Setter
 @Getter
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.ALWAYS)
+@JsonInclude(ALWAYS)
 public class BookStoreEntity {
     @JsonProperty("id")
     private Integer id;
