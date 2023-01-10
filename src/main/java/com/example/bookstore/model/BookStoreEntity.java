@@ -1,26 +1,24 @@
 package com.example.bookstore.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "bookstore")
 @Setter
 @Getter
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.ALWAYS)
 public class BookStoreEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonProperty("id")
     private Integer id;
-    @Column(name = "name")
+    @JsonProperty("name")
     private String name;
-    @Column(name = "price")
+    @JsonProperty("price")
     private String price;
-    @Column(name = "short_desc")
+    @JsonProperty("shortDesc")
     private String shortDesc;
-    @Column(name = "author")
+    @JsonProperty("author")
     private String author;
 }
