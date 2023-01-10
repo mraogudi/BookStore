@@ -14,9 +14,7 @@ public class BookStoreService {
     @Autowired
     private BookStoreRepository bookStoreRepository;
     public List<BookStoreEntity> getAllBooks() {
-        List<BookStoreEntity> list = new ArrayList<>();
-        list = bookStoreRepository.getAllBooks();
-        return list;
+        return bookStoreRepository.getAllBooks();
     }
 
     public BookStoreEntity getBookById(String id) {
