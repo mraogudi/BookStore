@@ -30,9 +30,9 @@ public class BookStoreController {
         return new ResponseEntity<>(bookStoreService.addBook(bookStore), HttpStatus.OK);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Integer> updateBook(@RequestBody BookStoreEntity bookStore) {
-        return new ResponseEntity<>(bookStoreService.updateBook(bookStore), HttpStatus.OK);
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Integer> updateBook(@PathVariable String id, @RequestBody BookStoreEntity bookStore) {
+        return new ResponseEntity<>(bookStoreService.updateBook(bookStore, id), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")

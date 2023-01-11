@@ -27,7 +27,8 @@ public class BookStoreService {
         return bookStoreRepository.addBook(bookStore);
     }
 
-    public int updateBook(BookStoreEntity bookStore) {
+    public int updateBook(BookStoreEntity bookStore, String id) {
+        bookStore.setId(Integer.parseInt(id));
         return bookStoreRepository.addBook(bookStore);
     }
 
