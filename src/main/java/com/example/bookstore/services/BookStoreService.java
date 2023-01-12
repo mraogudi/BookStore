@@ -22,14 +22,18 @@ public class BookStoreService {
     }
 
     public int addBook(BookStoreEntity bookStore) {
-        int count = bookStoreRepository.getCount();
-        bookStore.setId(count + 1);
-        return bookStoreRepository.addBook(bookStore);
+        if (bookStore.getId() == null) {
+            int count = bookStoreRepository.getCount();
+            bookStore.setId(count + 1);
+            return bookStoreRepository.addBook(bookStore);
+        } else {
+            return bookStoreRepository.updateBook(bookStore);
+        }
     }
 
     public int updateBook(BookStoreEntity bookStore, String id) {
         bookStore.setId(Integer.parseInt(id));
-        return bookStoreRepository.addBook(bookStore);
+        return bookStoreRepository.updateBook(bookStore);
     }
 
     public int deleteBook(String id) {

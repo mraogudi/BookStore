@@ -34,6 +34,13 @@ public class BookStoreRepository {
                 bookStore.getPrice(), bookStore.getAuthor(), bookStore.getShortDesc());
     }
 
+    public int updateBook(BookStoreEntity bookStore) {
+        String query = "update bookstore set name = ?, price = ?, author = ?, short_desc = ?) " +
+                "where id = ?";
+        return jdbcTemplate.update(query, bookStore.getName(), bookStore.getPrice(),
+                bookStore.getAuthor(), bookStore.getShortDesc(), bookStore.getId());
+    }
+
     public int deleteBook(String id) {
         String query = "delete from bookstore where id = ?";
         return jdbcTemplate.update(query, id);
