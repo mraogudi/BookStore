@@ -1,6 +1,10 @@
 server:
   port: 8082
 
+logging:
+  level:
+    root: DEBUG
+    com.example.bookstore: debug
 spring:
   h2:
     console:
